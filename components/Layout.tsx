@@ -8,7 +8,7 @@ type Props = {
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = 'This is the default title',
+  title = "developers quiz"
 }) => (
   <div>
     <Head>
@@ -20,16 +20,19 @@ const Layout: React.FunctionComponent<Props> = ({
       <nav>
         <Link href="/">
           <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
+        </Link>{" "}
+        |{" "}
+        <Link href="/login">
+          <a>Login</a>
+        </Link>{" "}
+        |{" "}
+        <Link href="/register">
+          <a>Register</a>
+        </Link>{" "}
+        |{" "}
+        <Link href="/hello">
+          <a>Hello</a>
+        </Link>{" "}
       </nav>
     </header>
     {children}
@@ -38,6 +41,6 @@ const Layout: React.FunctionComponent<Props> = ({
       <span>I'm here to stay (Footer)</span>
     </footer>
   </div>
-)
+);
 
 export default Layout
