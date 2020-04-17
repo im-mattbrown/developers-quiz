@@ -25,19 +25,19 @@ export default () => {
               console.log(response);
               router.push('/check-email')
               } catch (err) {
-              console.log('err: ', err.graphQLErrors);
-              const errors: { [key: string]: string} = {};
-              err.graphQLErrors[0].extensions.exception.validationErrors.forEach(
-                (validationErr: any) => {
-                  Object.values(
-                    validationErr.constraints
-                  ).forEach((message: any) => {
-                    errors[validationErr.property] = message;
-                  });
-                }
-              );
-             console.log(errors);
-             setErrors(errors)
+              // console.log('err: ', err.graphQLErrors);
+              // const errors: { [key: string]: string} = {};
+              // err.graphQLErrors[0].extensions.exception.validationErrors.forEach(
+              //   (validationErr: any) => {
+              //     Object.values(
+              //       validationErr.constraints
+              //     ).forEach((message: any) => {
+              //       errors[validationErr.property] = message;
+              //     });
+              //   }
+              // );
+             console.log(err);
+             setErrors(err)
               }
             }}
             initialValues={{
