@@ -23,7 +23,7 @@ interface Options {
 
 function create(initialState: any, { getToken }: Options) {
   const httpLink = createHttpLink({
-    uri: "https://graphql-server-apollo.herokuapp.com/graphql",
+    uri: "http://www.api.developersquiz.com/graphql",
     credentials: "include"
   });
 
