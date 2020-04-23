@@ -25,10 +25,28 @@ export type Query = {
 export type User = {
    __typename?: 'User';
   id: Scalars['ID'];
-  firstName: Scalars['String'];
-  lastName: Scalars['String'];
+  userName: Scalars['String'];
   email: Scalars['String'];
-  name: Scalars['String'];
+  profileImg: Scalars['String'];
+  html: Scalars['Boolean'];
+  css: Scalars['Boolean'];
+  js: Scalars['Boolean'];
+  react: Scalars['Boolean'];
+  vue: Scalars['Boolean'];
+  gql: Scalars['Boolean'];
+  ts: Scalars['Boolean'];
+  vsc: Scalars['Boolean'];
+  aws: Scalars['Boolean'];
+  level: Scalars['Float'];
+  html_scores?: Maybe<Array<Scalars['Float']>>;
+  css_scores?: Maybe<Array<Scalars['Float']>>;
+  js_scores?: Maybe<Array<Scalars['Float']>>;
+  react_scores?: Maybe<Array<Scalars['Float']>>;
+  vue_scores?: Maybe<Array<Scalars['Float']>>;
+  gql_scores?: Maybe<Array<Scalars['Float']>>;
+  ts_scores?: Maybe<Array<Scalars['Float']>>;
+  vsc_scores?: Maybe<Array<Scalars['Float']>>;
+  aws_scores?: Maybe<Array<Scalars['Float']>>;
 };
 
 export type Mutation = {
@@ -91,10 +109,20 @@ export type ChangePasswordInput = {
 };
 
 export type RegisterInput = {
-  firstName: Scalars['String'];
-  lastName: Scalars['String'];
+  userName: Scalars['String'];
   email: Scalars['String'];
   password: Scalars['String'];
+  profileImg: Scalars['String'];
+  html: Scalars['Boolean'];
+  css: Scalars['Boolean'];
+  js: Scalars['Boolean'];
+  react: Scalars['Boolean'];
+  vue: Scalars['Boolean'];
+  gql: Scalars['Boolean'];
+  ts: Scalars['Boolean'];
+  vsc: Scalars['Boolean'];
+  aws: Scalars['Boolean'];
+  level: Scalars['Float'];
 };
 
 export type QuizQuestionInput = {
@@ -121,7 +149,7 @@ export type ChangePasswordMutation = (
   { __typename?: 'Mutation' }
   & { changePassword?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'firstName' | 'lastName' | 'email' | 'name'>
+    & Pick<User, 'id' | 'userName' | 'email'>
   )> }
 );
 
@@ -155,7 +183,7 @@ export type LoginMutation = (
   { __typename?: 'Mutation' }
   & { login?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'firstName' | 'lastName' | 'email' | 'name'>
+    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws'>
   )> }
 );
 
@@ -176,7 +204,7 @@ export type RegisterMutation = (
   { __typename?: 'Mutation' }
   & { register: (
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'firstName' | 'lastName' | 'email' | 'name'>
+    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level'>
   ) }
 );
 
@@ -195,7 +223,7 @@ export type MeQuery = (
   { __typename?: 'Query' }
   & { me?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'firstName' | 'lastName' | 'email' | 'name'>
+    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level' | 'html_scores' | 'css_scores' | 'js_scores' | 'react_scores' | 'vue_scores' | 'gql_scores' | 'ts_scores' | 'vsc_scores' | 'aws_scores'>
   )> }
 );
 
@@ -204,10 +232,8 @@ export const ChangePasswordDocument = gql`
     mutation ChangePassword($data: ChangePasswordInput!) {
   changePassword(data: $data) {
     id
-    firstName
-    lastName
+    userName
     email
-    name
   }
 }
     `;
@@ -291,10 +317,18 @@ export const LoginDocument = gql`
     mutation Login($email: String!, $password: String!) {
   login(email: $email, password: $password) {
     id
-    firstName
-    lastName
+    userName
     email
-    name
+    profileImg
+    html
+    css
+    js
+    react
+    vue
+    gql
+    ts
+    vsc
+    aws
   }
 }
     `;
@@ -351,10 +385,19 @@ export const RegisterDocument = gql`
     mutation Register($data: RegisterInput!) {
   register(data: $data) {
     id
-    firstName
-    lastName
+    userName
     email
-    name
+    profileImg
+    html
+    css
+    js
+    react
+    vue
+    gql
+    ts
+    vsc
+    aws
+    level
   }
 }
     `;
@@ -409,10 +452,28 @@ export const MeDocument = gql`
     query Me {
   me {
     id
-    firstName
-    lastName
+    userName
     email
-    name
+    profileImg
+    html
+    css
+    js
+    react
+    vue
+    gql
+    ts
+    vsc
+    aws
+    level
+    html_scores
+    css_scores
+    js_scores
+    react_scores
+    vue_scores
+    gql_scores
+    ts_scores
+    vsc_scores
+    aws_scores
   }
 }
     `;

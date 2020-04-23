@@ -1,7 +1,7 @@
 import * as React from 'react'
-import Link from 'next/link'
+// import Link from 'next/link'
 import Head from 'next/head'
-import { MeComponent } from '../generated/apolloComponents';
+// import { MeComponent } from '../generated/apolloComponents';
 import styled from 'styled-components';
 
 type Props = {
@@ -9,20 +9,25 @@ type Props = {
 }
 
 const Container = styled('div')`
-  background-color: #fafafa;
+  background-color: #fffff;
 `
 
 const Layout: React.FunctionComponent<Props> = ({
   children,
-  title = "developers quiz"
+  title = "developers quiz",
 }) => (
   <Container>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link
+        href="//db.onlinewebfonts.com/c/bf436b16c1cc2fbc68aa9413bca8ec29?family=Apercu+Pro+Mono"
+        rel="stylesheet"
+        type="text/css"
+      />
     </Head>
-    <header>
+    {/* <header>
       <nav>
         <Link href="/">
           <a>Home</a>
@@ -57,7 +62,7 @@ const Layout: React.FunctionComponent<Props> = ({
           }}
         </MeComponent>
       </nav>
-    </header>
+    </header> */}
     {children}
     <footer>
       <hr />

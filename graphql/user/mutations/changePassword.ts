@@ -4,10 +4,8 @@ export const changePasswordMutation = gql`
   mutation ChangePassword($data: ChangePasswordInput!) {
     changePassword(data: $data) {
       id
-      firstName
-      lastName
+      userName
       email
-      name
     }
   }
 `

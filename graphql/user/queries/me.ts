@@ -4,10 +4,28 @@ export const meQuery = gql`
   query Me {
     me {
       id
-      firstName
-      lastName
+      userName
       email
-      name
+      profileImg
+      html
+      css
+      js
+      react
+      vue
+      gql
+      ts
+      vsc
+      aws
+      level
+      html_scores
+      css_scores
+      js_scores
+      react_scores
+      vue_scores
+      gql_scores
+      ts_scores
+      vsc_scores
+      aws_scores
     }
   }
 `

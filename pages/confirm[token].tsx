@@ -23,7 +23,7 @@ export default class Confirm extends React.PureComponent {
         token: token as string
       }
     });
-    console.log(ctx);
+    console.log(JSON.stringify(ctx));
     redirect(ctx, "/login");
 
     return {};
