@@ -471,7 +471,7 @@ const Choices = styled("div")`
 export default () => {
   const router = useRouter();
 
-  let imageRandom = Math.floor(Math.random() * 30) + 1; 
+  // let imageRandom = Math.floor(Math.random() * 30) + 1; 
 
   let profileArray = [
     "https://res.cloudinary.com/dzghwkkzb/image/upload/v1587582395/adolflinclerProfile_qrjm64.png",
