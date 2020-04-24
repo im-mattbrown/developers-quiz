@@ -38,6 +38,15 @@ export type User = {
   vsc: Scalars['Boolean'];
   aws: Scalars['Boolean'];
   level: Scalars['Float'];
+  html_scores: Array<Scalars['Float']>;
+  css_scores: Array<Scalars['Float']>;
+  js_scores: Array<Scalars['Float']>;
+  react_scores: Array<Scalars['Float']>;
+  vue_scores: Array<Scalars['Float']>;
+  gql_scores: Array<Scalars['Float']>;
+  ts_scores: Array<Scalars['Float']>;
+  vsc_scores: Array<Scalars['Float']>;
+  aws_scores: Array<Scalars['Float']>;
 };
 
 export type Mutation = {
@@ -114,6 +123,15 @@ export type RegisterInput = {
   vsc: Scalars['Boolean'];
   aws: Scalars['Boolean'];
   level: Scalars['Float'];
+  html_scores: Array<Scalars['Float']>;
+  css_scores: Array<Scalars['Float']>;
+  js_scores: Array<Scalars['Float']>;
+  react_scores: Array<Scalars['Float']>;
+  vue_scores: Array<Scalars['Float']>;
+  gql_scores: Array<Scalars['Float']>;
+  ts_scores: Array<Scalars['Float']>;
+  vsc_scores: Array<Scalars['Float']>;
+  aws_scores: Array<Scalars['Float']>;
 };
 
 export type QuizQuestionInput = {
@@ -199,14 +217,6 @@ export type RegisterMutation = (
   ) }
 );
 
-export type HelloQueryVariables = {};
-
-
-export type HelloQuery = (
-  { __typename?: 'Query' }
-  & Pick<Query, 'hello'>
-);
-
 export type MeQueryVariables = {};
 
 
@@ -214,7 +224,7 @@ export type MeQuery = (
   { __typename?: 'Query' }
   & { me?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level'>
+    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level' | 'html_scores' | 'css_scores' | 'js_scores' | 'react_scores' | 'vue_scores' | 'gql_scores' | 'ts_scores' | 'vsc_scores' | 'aws_scores'>
   )> }
 );
 
@@ -415,31 +425,6 @@ export function withRegister<TProps, TChildProps = {}, TDataName extends string 
 };
 export type RegisterMutationResult = ApolloReactCommon.MutationResult<RegisterMutation>;
 export type RegisterMutationOptions = ApolloReactCommon.BaseMutationOptions<RegisterMutation, RegisterMutationVariables>;
-export const HelloDocument = gql`
-    query Hello {
-  hello
-}
-    `;
-export type HelloComponentProps = Omit<ApolloReactComponents.QueryComponentOptions<HelloQuery, HelloQueryVariables>, 'query'>;
-
-    export const HelloComponent = (props: HelloComponentProps) => (
-      <ApolloReactComponents.Query<HelloQuery, HelloQueryVariables> query={HelloDocument} {...props} />
-    );
-    
-export type HelloProps<TChildProps = {}, TDataName extends string = 'data'> = {
-      [key in TDataName]: ApolloReactHoc.DataValue<HelloQuery, HelloQueryVariables>
-    } & TChildProps;
-export function withHello<TProps, TChildProps = {}, TDataName extends string = 'data'>(operationOptions?: ApolloReactHoc.OperationOption<
-  TProps,
-  HelloQuery,
-  HelloQueryVariables,
-  HelloProps<TChildProps, TDataName>>) {
-    return ApolloReactHoc.withQuery<TProps, HelloQuery, HelloQueryVariables, HelloProps<TChildProps, TDataName>>(HelloDocument, {
-      alias: 'hello',
-      ...operationOptions
-    });
-};
-export type HelloQueryResult = ApolloReactCommon.QueryResult<HelloQuery, HelloQueryVariables>;
 export const MeDocument = gql`
     query Me {
   me {
@@ -457,6 +442,15 @@ export const MeDocument = gql`
     vsc
     aws
     level
+    html_scores
+    css_scores
+    js_scores
+    react_scores
+    vue_scores
+    gql_scores
+    ts_scores
+    vsc_scores
+    aws_scores
   }
 }
     `;
