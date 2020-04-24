@@ -575,7 +575,8 @@ export default () => {
                 userName: "",
                 email: "",
                 password: "",
-                profileImg: profileArray[imageRandom],
+                profileImg:
+                  "https://res.cloudinary.com/dzghwkkzb/image/upload/v1587582397/timeCopProfile_ql0gup.png",
                 html: false,
                 css: false,
                 js: false,
@@ -594,7 +595,7 @@ export default () => {
                 gql_scores: [],
                 ts_scores: [],
                 vsc_scores: [],
-                aws_scores: []
+                aws_scores: [],
               }}
             >
               {({ handleSubmit }) => (
