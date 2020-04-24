@@ -471,7 +471,7 @@ const Choices = styled("div")`
 export default () => {
   const router = useRouter();
 
-  let imageRandom = Math.floor(Math.random() * 30) + 1; 
+  // let imageRandom = Math.floor(Math.random() * 30) + 1; 
 
   let profileArray = [
     "https://res.cloudinary.com/dzghwkkzb/image/upload/v1587582395/adolflinclerProfile_qrjm64.png",
@@ -575,8 +575,7 @@ export default () => {
                 userName: "",
                 email: "",
                 password: "",
-                profileImg:
-                  "https://res.cloudinary.com/dzghwkkzb/image/upload/v1587582397/timeCopProfile_ql0gup.png",
+                profileImg: profileArray[33],
                 html: false,
                 css: false,
                 js: false,
@@ -595,7 +594,7 @@ export default () => {
                 gql_scores: [],
                 ts_scores: [],
                 vsc_scores: [],
-                aws_scores: [],
+                aws_scores: []
               }}
             >
               {({ handleSubmit }) => (
