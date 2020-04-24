@@ -6,16 +6,6 @@ export const loginMutation = gql`
              id
              userName
              email
-             profileImg
-             html
-             css
-             js
-             react
-             vue
-             gql
-             ts
-             vsc
-             aws
            }
          }
        `;
