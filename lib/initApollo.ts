@@ -24,7 +24,7 @@ interface Options {
 function create(initialState: any, { getToken }: Options) {
   const httpLink = createHttpLink({
     uri: "http://www.api.developersquiz.com/graphql",
-    credentials: "include",
+    credentials: "include"
   });
 
   const errorLink = onError(({ graphQLErrors, networkError }) => {

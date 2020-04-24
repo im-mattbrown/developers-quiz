@@ -38,15 +38,6 @@ export type User = {
   vsc: Scalars['Boolean'];
   aws: Scalars['Boolean'];
   level: Scalars['Float'];
-  html_scores?: Maybe<Array<Scalars['Float']>>;
-  css_scores?: Maybe<Array<Scalars['Float']>>;
-  js_scores?: Maybe<Array<Scalars['Float']>>;
-  react_scores?: Maybe<Array<Scalars['Float']>>;
-  vue_scores?: Maybe<Array<Scalars['Float']>>;
-  gql_scores?: Maybe<Array<Scalars['Float']>>;
-  ts_scores?: Maybe<Array<Scalars['Float']>>;
-  vsc_scores?: Maybe<Array<Scalars['Float']>>;
-  aws_scores?: Maybe<Array<Scalars['Float']>>;
 };
 
 export type Mutation = {
@@ -183,7 +174,7 @@ export type LoginMutation = (
   { __typename?: 'Mutation' }
   & { login?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws'>
+    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level'>
   )> }
 );
 
@@ -223,7 +214,7 @@ export type MeQuery = (
   { __typename?: 'Query' }
   & { me?: Maybe<(
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level' | 'html_scores' | 'css_scores' | 'js_scores' | 'react_scores' | 'vue_scores' | 'gql_scores' | 'ts_scores' | 'vsc_scores' | 'aws_scores'>
+    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level'>
   )> }
 );
 
@@ -329,6 +320,7 @@ export const LoginDocument = gql`
     ts
     vsc
     aws
+    level
   }
 }
     `;
@@ -465,15 +457,6 @@ export const MeDocument = gql`
     vsc
     aws
     level
-    html_scores
-    css_scores
-    js_scores
-    react_scores
-    vue_scores
-    gql_scores
-    ts_scores
-    vsc_scores
-    aws_scores
   }
 }
     `;
