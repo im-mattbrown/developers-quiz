@@ -213,7 +213,7 @@ export type RegisterMutation = (
   { __typename?: 'Mutation' }
   & { register: (
     { __typename?: 'User' }
-    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level'>
+    & Pick<User, 'id' | 'userName' | 'email' | 'profileImg' | 'html' | 'css' | 'js' | 'react' | 'vue' | 'gql' | 'ts' | 'vsc' | 'aws' | 'level' | 'html_scores' | 'css_scores' | 'js_scores' | 'react_scores' | 'vue_scores' | 'gql_scores' | 'ts_scores' | 'vsc_scores' | 'aws_scores'>
   ) }
 );
 
@@ -409,6 +409,15 @@ export const RegisterDocument = gql`
     vsc
     aws
     level
+    html_scores
+    css_scores
+    js_scores
+    react_scores
+    vue_scores
+    gql_scores
+    ts_scores
+    vsc_scores
+    aws_scores
   }
 }
     `;
