@@ -586,15 +586,15 @@ export default () => {
                 vsc: false,
                 aws: false,
                 level: 1,
-                html_scores: [],
-                css_scores: [],
-                js_scores: [],
-                react_scores: [],
-                vue_scores: [],
-                gql_scores: [],
-                ts_scores: [],
-                vsc_scores: [],
-                aws_scores: []
+                html_scores: [0],
+                css_scores: [0],
+                js_scores: [0],
+                react_scores: [0],
+                vue_scores: [0],
+                gql_scores: [0],
+                ts_scores: [0],
+                vsc_scores: [0],
+                aws_scores: [0]
               }}
             >
               {({ handleSubmit }) => (
